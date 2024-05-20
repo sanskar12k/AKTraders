@@ -45,15 +45,15 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-presentation.jpg";
-
+// import bgImage from "assets/images/bg-presentation.jpg";
+import bgImage from "assets/images/fImg6.webp";
 function Presentation() {
   return (
     <>
       <DefaultNavbar routes={routes} sticky />
       <MKBox
-        minHeight="75vh"
-        width="100%"
+        minHeight="65vh"
+        // width="100%"
         sx={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
@@ -63,8 +63,8 @@ function Presentation() {
         }}
       >
         <Container>
-          <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
-            <MKTypography
+          <Grid container item xs={12} lg={12} justifyContent="center" mx="auto">
+            {/* <MKTypography
               variant="h1"
               color="white"
               mt={-6}
@@ -76,13 +76,13 @@ function Presentation() {
               })}
             >
               AK Traders{" "}
-            </MKTypography>
+            </MKTypography> */}
             <MKTypography
               variant="body1"
               color="white"
               textAlign="center"
-              px={{ xs: 6, lg: 12 }}
-              mt={1}
+              px={{ xs: 6, lg: 10 }}
+              mt={0}
             >
               Explore a world of essentials and delights, all under one roof at our store.
             </MKTypography>
