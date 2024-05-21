@@ -52,8 +52,8 @@ function DefaultInfoCard({ color, icon, title, description, direction, small }) 
         display="block"
         variant={small ? "button" : "body2"}
         color="text"
-        pr={direction === "left" ? 6 : 0}
-        pl={direction === "right" ? 6 : 0}
+        pr={direction === "left" ? 2 : 0}
+        pl={direction === "right" ? 2 : 0}
       >
         {description}
       </MKTypography>

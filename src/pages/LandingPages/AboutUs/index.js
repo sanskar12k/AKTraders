@@ -93,18 +93,38 @@ function AboutUs() {
               Find us on
             </MKTypography>
             <MKBox display="flex" justifyContent="center" alignItems="center">
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
+              <MKTypography
+                component="a"
+                variant="body1"
+                color="white"
+                href="https://www.facebook.com/aktraders0302"
+                mr={3}
+              >
                 <i className="fab fa-facebook" />
               </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
+              <MKTypography
+                component="a"
+                variant="body1"
+                color="white"
+                href="https://www.instagram.com/a_k_traders/"
+                mr={3}
+              >
                 <i className="fab fa-instagram" />
               </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
+              {/* <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
                 <i className="fab fa-call" />
+              </MKTypography> */}
+              <MKTypography
+                component="a"
+                variant="body1"
+                color="white"
+                href="mailto:info@aktraders.shop"
+              >
+                <i className="fa fa-envelope" />
               </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#">
-                <i className="fab fa-google-plus" />
-              </MKTypography>
+              {/* <MKTypography component="a" variant="body1" color="white" href="tel:7985535984">
+                <i className="fa fa-phone" />
+              </MKTypography> */}
             </MKBox>
           </Grid>
         </Container>

@@ -6,6 +6,7 @@ import MKTypography from "components/MKTypography";
 
 // Images
 import logoCT from "assets/images/akt-logo.png";
+import { Mail } from "@mui/icons-material";
 
 const date = new Date().getFullYear();
 
@@ -26,6 +27,10 @@ export default {
     {
       icon: <InstagramIcon />,
       link: "https://www.instagram.com/a_k_traders/",
+    },
+    {
+      icon: <Mail />,
+      link: "mailto:info@aktraders.shop",
     },
     // {
     //   icon: <TwitterIcon />,
@@ -51,7 +56,7 @@ export default {
     {
       name: "company",
       items: [
-        { name: "about us", href: "https://www.creative-tim.com/presentation" },
+        { name: "about us", href: "/pages/landing-pages/about-us" },
         // { name: "freebies", href: "https://www.creative-tim.com/templates/free" },
         // { name: "premium tools", href: "https://www.creative-tim.com/templates/premium" },
         // { name: "blog", href: "https://www.creative-tim.com/blog" },
@@ -60,7 +65,7 @@ export default {
     {
       name: "help & support",
       items: [
-        { name: "contact us", href: "https://www.creative-tim.com/contact-us" },
+        { name: "contact us", href: "/pages/landing-pages/contact-us" },
         // { name: "knowledge center", href: "https://www.creative-tim.com/knowledge-center" },
         // { name: "custom development", href: "https://services.creative-tim.com/" },
         // { name: "sponsorships", href: "https://www.creative-tim.com/sponsorships" },
@@ -69,9 +74,9 @@ export default {
     {
       name: "site map",
       items: [
-        { name: "Home", href: "https://www.creative-tim.com/terms" },
-        { name: "About Us", href: "https://www.creative-tim.com/privacy" },
-        { name: "Contact", href: "https://www.creative-tim.com/license" },
+        { name: "Home", href: "/presentation" },
+        { name: "About Us", href: "pages/landing-pages/about-us" },
+        { name: "Contact", href: "/pages/landing-pages/contact-us" },
       ],
     },
   ],
