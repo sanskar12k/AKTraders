@@ -20,12 +20,12 @@ export default [
   {
     image: `${imagesPrefix}/about-us.jpg`,
     name: "About Us Page",
-    route: "/pages/landing-pages/about-us",
+    route: "/about-us",
   },
   {
     image: `${imagesPrefix}/contact.jpg`,
     name: "Contact Us Page",
-    route: "/pages/landing-pages/contact-us",
+    route: "/contact-us",
   },
   {
     image:

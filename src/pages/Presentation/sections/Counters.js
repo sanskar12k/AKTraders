@@ -37,16 +37,6 @@ function Counters() {
               // description="From buttons, to inputs, navbars, alerts or cards, you are covered"
             />
           </Grid>
-          <Grid item xs={12} md={4} display="flex">
-            <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, mx: 0 }} />
-            <DefaultCounterCard
-              count={8500}
-              suffix="+"
-              title="Customers every month"
-              // description="Mix the sections, change the colors and unleash your creativity"
-            />
-            <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
-          </Grid>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
               count={1000}
@@ -54,6 +44,16 @@ function Counters() {
               title="Ranges of product"
               // description="Save 3-4 weeks of work when you use our pre-made pages for your website"
             />
+          </Grid>
+          <Grid item xs={12} md={4} display="flex">
+            <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, mx: 0 }} />
+            <DefaultCounterCard
+              count={10000}
+              suffix="+"
+              title="Customers every month"
+              // description="Mix the sections, change the colors and unleash your creativity"
+            />
+            <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
         </Grid>
       </Container>

@@ -1,20 +1,7 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Grid from "@mui/material/Grid";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
@@ -29,11 +16,67 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import emailjs from "@emailjs/browser";
 
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import { useRef, useState } from "react";
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").config();
+// }
 
 function ContactUs() {
+  document.title = "AK Traders | Contact Us";
+  const form = useRef();
+
+  const [values, setValues] = useState({
+    from_name: "",
+    from_email: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    setValues((values) => ({
+      ...values,
+      [e.target.name]: e.target.value,
+    }));
+  };
+  const [load, setLoad] = useState(false);
+  const sendMail = async (e) => {
+    e.preventDefault();
+    try {
+      if (!values.from_name || !values.from_email) {
+        toast.warn("Fill all the required fields", {
+          position: "top-center",
+        });
+      } else {
+        setLoad(true);
+        const res = await emailjs.sendForm(
+          process.env.REACT_APP_SERVICE_ID,
+          process.env.REACT_APP_TEMPLATE_ID,
+          form.current,
+          process.env.REACT_APP_PUBLIC_ID
+        );
+        console.log(res.text);
+        setTimeout(() => {
+          toast.success("Message Sent successfully", {
+            position: "top-center",
+          });
+        }, 100);
+        setValues({
+          from_name: "",
+          from_email: "",
+          message: "",
+        });
+        setLoad(false);
+      }
+    } catch (error) {
+      setLoad(false);
+      console.log(error);
+      toast.warn("Request not sent", {
+        position: "top-center",
+      });
+    }
+  };
   return (
     <>
       <MKBox position="fixed" top="0.5rem" width="100%">
@@ -88,15 +131,25 @@ function ContactUs() {
             <MKBox p={3}>
               <MKTypography variant="body2" color="text" mb={3}>
                 For further questions, including partnership opportunities, please email
-                hello@creative-tim.com or contact using our contact form.
+                info@aktraders.shop or call us at +917985535984 or contact using our contact form.
               </MKTypography>
-              <MKBox width="100%" component="form" method="post" autoComplete="off">
+              <MKBox
+                width="100%"
+                component="form"
+                method="post"
+                ref={form}
+                onSubmit={sendMail}
+                autoComplete="off"
+              >
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
                     <MKInput
                       variant="standard"
                       label="Full Name"
                       InputLabelProps={{ shrink: true }}
+                      value={values.from_name}
+                      onChange={handleChange}
+                      name="from_name"
                       fullWidth
                     />
                   </Grid>
@@ -105,25 +158,31 @@ function ContactUs() {
                       type="email"
                       variant="standard"
                       label="Email"
+                      value={values.from_email}
+                      onChange={handleChange}
                       InputLabelProps={{ shrink: true }}
+                      name="from_email"
                       fullWidth
                     />
                   </Grid>
                   <Grid item xs={12}>
                     <MKInput
                       variant="standard"
-                      label="What can we help you?"
-                      placeholder="Describe your problem in at least 250 characters"
+                      label="How can we help you?"
+                      // placeholder="Describe your problem in at least 250 characters"
                       InputLabelProps={{ shrink: true }}
                       multiline
                       fullWidth
+                      onChange={handleChange}
+                      value={values.message}
+                      name="message"
                       rows={6}
                     />
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
                   <MKButton type="submit" variant="gradient" color="info">
-                    Send Message
+                    {load ? "Sending..." : "Send Message"}
                   </MKButton>
                 </Grid>
               </MKBox>
@@ -133,6 +192,7 @@ function ContactUs() {
       </Grid>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
+        <ToastContainer />
       </MKBox>
     </>
   );

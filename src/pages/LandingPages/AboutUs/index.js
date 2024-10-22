@@ -29,7 +29,7 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 
 // About Us page sections
 import Information from "pages/LandingPages/AboutUs/sections/Information";
-import Team from "pages/LandingPages/AboutUs/sections/Team";
+// import Team from "pages/LandingPages/AboutUs/sections/Team";
 // import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
 // import Newsletter from "pages/LandingPages/AboutUs/sections/Newsletter";
 
@@ -89,9 +89,9 @@ function AboutUs() {
             {/* <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
               create account
             </MKButton> */}
-            <MKTypography variant="h6" color="white" mt={8} mb={1}>
-              Find us on
-            </MKTypography>
+            {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
+              {/* Find us on
+            </MKTypography> */}
             <MKBox display="flex" justifyContent="center" alignItems="center">
               <MKTypography
                 component="a"
@@ -111,9 +111,15 @@ function AboutUs() {
               >
                 <i className="fab fa-instagram" />
               </MKTypography>
-              {/* <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-call" />
-              </MKTypography> */}
+              <MKTypography
+                component="a"
+                variant="body1"
+                color="white"
+                href="tel:+917985535984"
+                mr={3}
+              >
+                <i className="fa fa-phone" />
+              </MKTypography>
               <MKTypography
                 component="a"
                 variant="body1"
@@ -122,6 +128,17 @@ function AboutUs() {
               >
                 <i className="fa fa-envelope" />
               </MKTypography>
+              {/* <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
+                <i className="fab fa-call" />
+              </MKTypography> */}
+              {/* <MKTypography
+                component="a"
+                variant="body1"
+                color="white"
+                href="mailto:info@aktraders.shop"
+              >
+                <i className="fa fa-phone" />
+              </MKTypography> */}
               {/* <MKTypography component="a" variant="body1" color="white" href="tel:7985535984">
                 <i className="fa fa-phone" />
               </MKTypography> */}
@@ -139,7 +156,7 @@ function AboutUs() {
         }}
       >
         <Information />
-        <Team />
+        {/* <Team /> */}
         {/* <Featuring /> */}
         {/* <Newsletter /> */}
       </Card>

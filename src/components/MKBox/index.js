@@ -14,21 +14,71 @@ Coded by www.creative-tim.com
 */
 
 import { forwardRef } from "react";
-
+// import bgImg from "assets/images/fImg6.webp";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
-
+// import Slider from "react-slick";
+// import SimpleSlider from "components/MKBox/slider";
+// import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // Custom styles for MKBox
 import MKBoxRoot from "components/MKBox/MKBoxRoot";
+import SimpleSlider from "./slider";
+
+// const defaultCarouselSettings = {
+//   dots: true,
+//   infinite: true,
+//   speed: 500,
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   // autoplay: true,
+// };
 
 const MKBox = forwardRef(
-  ({ variant, bgColor, color, opacity, borderRadius, shadow, coloredShadow, ...rest }, ref) => (
-    <MKBoxRoot
-      {...rest}
-      ref={ref}
-      ownerState={{ variant, bgColor, color, opacity, borderRadius, shadow, coloredShadow }}
-    />
-  )
+  (
+    {
+      variant,
+      bgColor,
+      color,
+      opacity,
+      borderRadius,
+      shadow,
+      coloredShadow,
+      isCarousel,
+      images,
+      // carouselSettings = {},
+      ...rest
+    },
+    ref
+  ) => {
+    // const finalCarouselSettings = {
+    //   ...defaultCarouselSettings, // Use default values
+    //   ...carouselSettings, // Override with user-defined settings if provided
+    // };
+    // const settings = {
+    //   dots: true,
+    //   infinite: true,
+    //   speed: 2,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   autoplay: true,
+    // };
+    return (
+      <MKBoxRoot
+        {...rest}
+        ref={ref}
+        ownerState={{ variant, bgColor, color, opacity, borderRadius, shadow, coloredShadow }}
+      >
+        {isCarousel ? (
+          <div>
+            <SimpleSlider images={images} />
+          </div>
+        ) : (
+          rest.children // Fallback content for non-carousel usage
+        )}
+      </MKBoxRoot>
+    );
+  }
 );
 
 // Setting default values for the props of MKBox
@@ -40,6 +90,9 @@ MKBox.defaultProps = {
   borderRadius: "none",
   shadow: "none",
   coloredShadow: "none",
+  isCarousel: false, // No carousel by default
+  images: [], // Empty image array by default
+  // carouselSettings: {},
 };
 
 // Typechecking props for the MKBox
@@ -61,6 +114,9 @@ MKBox.propTypes = {
     "dark",
     "none",
   ]),
+  isCarousel: PropTypes.bool, // Validates if the carousel is active
+  images: PropTypes.arrayOf(PropTypes.string), // Ensures images is an array of strings
+  // carouselSettings: PropTypes.object, // Validates carousel settings object
 };
 
 export default MKBox;

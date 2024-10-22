@@ -56,7 +56,6 @@ function DefaultFooter({ content }) {
                   key={link}
                   component="a"
                   href={link}
-                  target="_blank"
                   rel="noreferrer"
                   variant="h5"
                   color="dark"
@@ -87,7 +86,7 @@ function DefaultFooter({ content }) {
                         component="a"
                         href={href}
                         // target="_blank"
-                        rel="noreferrer"
+                        c
                         variant="button"
                         fontWeight="regular"
                         textTransform="capitalize"
@@ -114,6 +113,7 @@ function DefaultFooter({ content }) {
             {copyright}
           </Grid>
         </Grid>
+        <h2></h2>
       </Container>
     </MKBox>
   );

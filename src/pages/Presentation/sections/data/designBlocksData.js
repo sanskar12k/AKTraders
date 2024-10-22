@@ -23,8 +23,8 @@ import household from "assets/images/household.jpeg";
 import personal from "assets/images/personal.jpg";
 import divine from "assets/images/divine.jpg";
 import decor from "assets/images/bdayDecor.jpeg";
-import toys from "assets/images/toys.jpg";
-import beauty from "assets/images/beauty.jpg";
+import toys from "assets/images/toys_v1.jpg";
+import beauty from "assets/images/cosmetic_v1.jpg";
 export default [
   {
     title: "",

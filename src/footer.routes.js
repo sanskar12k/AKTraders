@@ -1,6 +1,7 @@
 // @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { Phone } from "@mui/icons-material";
 // Material Kit 2 React components
 import MKTypography from "components/MKTypography";
 
@@ -32,6 +33,10 @@ export default {
       icon: <Mail />,
       link: "mailto:info@aktraders.shop",
     },
+    {
+      icon: <Phone />,
+      link: "tel:+917985535984",
+    },
     // {
     //   icon: <TwitterIcon />,
     //   link: "https://twitter.com/creativetim",
@@ -56,7 +61,7 @@ export default {
     {
       name: "company",
       items: [
-        { name: "about us", href: "/pages/landing-pages/about-us" },
+        { name: "about us", href: "/about-us" },
         // { name: "freebies", href: "https://www.creative-tim.com/templates/free" },
         // { name: "premium tools", href: "https://www.creative-tim.com/templates/premium" },
         // { name: "blog", href: "https://www.creative-tim.com/blog" },
@@ -65,7 +70,7 @@ export default {
     {
       name: "help & support",
       items: [
-        { name: "contact us", href: "/pages/landing-pages/contact-us" },
+        { name: "contact us", href: "/contact-us" },
         // { name: "knowledge center", href: "https://www.creative-tim.com/knowledge-center" },
         // { name: "custom development", href: "https://services.creative-tim.com/" },
         // { name: "sponsorships", href: "https://www.creative-tim.com/sponsorships" },
@@ -74,9 +79,9 @@ export default {
     {
       name: "site map",
       items: [
-        { name: "Home", href: "/presentation" },
-        { name: "About Us", href: "pages/landing-pages/about-us" },
-        { name: "Contact", href: "/pages/landing-pages/contact-us" },
+        { name: "Home", href: "/" },
+        { name: "About Us", href: "/about-us" },
+        { name: "Contact", href: "/contact-us" },
       ],
     },
   ],

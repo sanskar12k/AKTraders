@@ -46,18 +46,33 @@ import footerRoutes from "footer.routes";
 
 // Images
 // import bgImage from "assets/images/bg-presentation.jpg";
+
 import bgImage from "assets/images/fImg6.webp";
+import cookies from "assets/images/cookies_cropped.jpg";
+// import carousel1 from "assets/images/carousel1.webp";
+// import carousel2 from "assets/images/carousel2.webp";
+// import carousel3 from "assets/images/carousel3.webp";
+import cosmetics from "assets/images/cosmetics.jpg";
+import facewash from "assets/images/facewash.jpg";
+import dryfruit from "assets/images/dryFruits.jpg";
 function Presentation() {
+  const bgImages = [bgImage, cookies, dryfruit, cosmetics, facewash];
+  const customCarouselSettings = {
+    dots: false,
+    autoplay: false,
+    slidesToShow: 2,
+  };
+
   return (
     <>
       <DefaultNavbar routes={routes} sticky />
       <MKBox
         minHeight="65vh"
-        // width="100%"
+        // width="100vh"
+        isCarousel={true}
+        images={bgImages}
+        carouselSettings={customCarouselSettings}
         sx={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "top",
           display: "grid",
           placeItems: "center",
         }}
@@ -100,6 +115,14 @@ function Presentation() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
+        <MKTypography variant="h1" color="transparent" fontSize="1px">
+          Best supermarket in Ghazipur Best departmental store in Ghazipur Best shopping mall in
+          Ghazipur Best mall in ghazipur Best cosmetic store in Ghazipur Best grocery store in
+          Ghazipur Best bakery in Ghazipur Best kirana store in Ghazipur Best kirana shop in
+          Ghazipur Best gift shop in Ghazipur Best dry fruit store in Ghazipur Best cold drink in
+          Ghazipur Best cake in Ghazipur Lakme Store in Ghazipur Best snacks in Ghazipur Best
+          namkeen in Ghazipur
+        </MKTypography>
         <Counters />
         <Information />
         <Divider sx={{ my: 2 }} />

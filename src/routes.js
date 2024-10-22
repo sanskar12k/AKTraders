@@ -271,12 +271,12 @@ const routes = [
   // },
   {
     name: "about us",
-    route: "/pages/landing-pages/about-us",
+    route: "/about-us",
     component: <AboutUs />,
   },
   {
     name: "contact",
-    route: "/pages/landing-pages/contact-us",
+    route: "/contact-us",
     component: <ContactUs />,
   },
 ];
